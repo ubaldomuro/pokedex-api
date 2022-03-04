@@ -1,0 +1,256 @@
+/*-------------------General Styles-------------------*/
+
+body {
+  font-size: 16px;
+  background-color: black;
+}
+
+.main-container {
+  display: grid;
+  grid-template: 1fr 3fr / 1fr 4fr;
+  grid-template-areas:
+    "sidebar title"
+    "sidebar content";
+  height: 100vh;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("/public/images/background-wallpaper.jpg");
+  background-position: center;
+}
+
+
+
+/*-------------------Side Bar-------------------*/
+
+.pokemon-list {
+  display: flex;
+  grid-area: sidebar;
+  background-color: #fccf00;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.pokemon-list ol {
+  list-style-type: decimal-leading-zero;
+  padding-right: 1rem;
+}
+
+.pokemon-list li {
+  color: #2a75bb;
+  cursor: pointer;
+}
+
+.unselected {
+  text-decoration: none;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
+/* .pokemon-list li {
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.pokemon-list li:hover,
+.pokemon-list li:focus,
+.pokemon-list li:active {
+  text-decoration: none;
+}
+
+.pokemon-list li::before  {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #2a75bb;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s,transform 0.2s ease-out;
+}
+
+.pokemon-list li:active::before {
+    background-color: #000;
+}
+.pokemon-list li:hover::before,
+.pokemon-list li:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+} */
+
+
+
+/*-------------------Title-------------------*/
+
+header {
+  grid-area: title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header img {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 1rem;
+}
+
+
+
+/*-------------------Selected Pokemon Information-------------------*/
+
+.selected-pokemon {
+  grid-area: content;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.selected-pokemon .name-sprite {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 20rem;
+  height: 12rem;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.selected-pokemon .tv-static {
+  position: fixed;
+  width: 20rem;
+  height: 12rem;
+  opacity: 0.15;
+  border-radius: 1rem;
+}
+
+.selected-pokemon #type {
+  display: inline-block;
+  margin: 1rem;
+  width: 7rem;
+  font-family: Orbitron;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000,
+    1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.selected-pokemon .stats {
+  display: flex;
+  flex-flow: column;
+  width: 16rem;
+  padding: 2rem;
+  font-size: 1.3rem;
+  background-color: #fccf00;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.selected-pokemon .stats span {
+  margin-bottom: 1.5rem;
+}
+
+.selected-pokemon .ability {
+  margin-left: 3rem;
+}
+
+.selected-pokemon .normal {
+  background-color: #a8a77a;
+}
+
+.selected-pokemon .fire {
+  background-color: #ee8130;
+}
+
+.selected-pokemon .water {
+  background-color: #6390f0;
+}
+
+.selected-pokemon .electric {
+  background-color: #f7d02c;
+}
+
+.selected-pokemon .grass {
+  background-color: #7ac74c;
+}
+
+.selected-pokemon .ice {
+  background-color: #96d9d6;
+}
+
+.selected-pokemon .fighting {
+  background-color: #c22e28;
+}
+
+.selected-pokemon .poison {
+  background-color: #a33ea1;
+}
+
+.selected-pokemon .ground {
+  background-color: #e2bf65;
+}
+
+.selected-pokemon .flying {
+  background-color: #a98ff3;
+}
+
+.selected-pokemon .psychic {
+  background-color: #f95587;
+}
+
+.selected-pokemon .bug {
+  background-color: #a6b91a;
+}
+
+.selected-pokemon .rock {
+  background-color: #b6a136;
+}
+
+.selected-pokemon .ghost {
+  background-color: #735797;
+}
+
+.selected-pokemon .dragon {
+  background-color: #6f35fc;
+}
+
+.selected-pokemon .dark {
+  background-color: #705746;
+}
+
+.selected-pokemon .steel {
+  background-color: #b7b7ce;
+}
+
+.selected-pokemon .fairy {
+  background-color: #d685ad;
+}
+
+
+
+/*-------------------Responsive Rules-------------------*/
+
+@media only screen and (min-resolution: 200dpi) and (orientation: portrait) {
+  .main-container {
+    grid-template: 1fr 3fr / 1fr 1.5fr;
+    grid-template-areas:
+      "sidebar title"
+      "sidebar content";
+  }
+}
