@@ -11,15 +11,14 @@ body {
   grid-template-areas:
     "sidebar title"
     "sidebar content";
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   background-image: url("/public/images/background-wallpaper.jpg");
   background-position: center;
 }
-
-
 
 /*-------------------Side Bar-------------------*/
 
@@ -83,8 +82,6 @@ body {
     transform: scale(1, 1);
 } */
 
-
-
 /*-------------------Title-------------------*/
 
 header {
@@ -100,8 +97,6 @@ header img {
   margin: 0 1rem;
 }
 
-
-
 /*-------------------Selected Pokemon Information-------------------*/
 
 .selected-pokemon {
@@ -109,6 +104,7 @@ header img {
   display: flex;
   flex-flow: column;
   align-items: center;
+  justify-content:space-evenly;
 }
 
 .selected-pokemon .name-sprite {
@@ -125,7 +121,7 @@ header img {
 }
 
 .selected-pokemon .tv-static {
-  position: fixed;
+  position: absolute;
   width: 20rem;
   height: 12rem;
   opacity: 0.15;
@@ -134,7 +130,7 @@ header img {
 
 .selected-pokemon #type {
   display: inline-block;
-  margin: 1rem;
+  margin: 0 1rem;
   width: 7rem;
   font-family: Orbitron;
   font-size: 1.3rem;
@@ -241,8 +237,6 @@ header img {
 .selected-pokemon .fairy {
   background-color: #d685ad;
 }
-
-
 
 /*-------------------Responsive Rules-------------------*/
 

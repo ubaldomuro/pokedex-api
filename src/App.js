@@ -10,10 +10,7 @@ const App = () => {
   let [types, setTypes] = React.useState([]);
   let handlePokemonClick = (pokeName) => {
     setSelectedPokemonName(pokeName);
-    console.log("STYLE CHANGE");
-    setStyle("selected");
   };
-  let [style, setStyle] = React.useState("unselected");
 
   useEffect(() => {
     const url = "https://pokeapi.co/api/v2/pokemon";
@@ -56,10 +53,11 @@ const App = () => {
       <aside className="pokemon-list">
         <ol>
           {pokemon.map(function (poke) {
+            let isSelected = poke.name === selectedPokemonName;
             return (
               <li
                 key={poke.name}
-                className={style}
+                className={isSelected ? "selected" : "unselected"}
                 onClick={() => handlePokemonClick(poke.name)}
               >
                 {poke.name}
